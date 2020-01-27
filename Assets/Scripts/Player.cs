@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Card[] playerHand;
+
     private void Start()
     {
         
