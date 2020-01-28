@@ -20,7 +20,7 @@ public class CardManager : MonoBehaviour
         playerHandScript.enableLayout();
         for (int i = 0; i < n; i++)
         {
-            int rand_num = Random.Range(0, 9);
+            int rand_num = Random.Range(0, 0);
             CardTemplate.GetComponent<CardDisplay>().card = allCard[rand_num];
             CardTemplate.GetComponent<CardDisplay>().playerHandScript = playerHandScript;
             Instantiate(CardTemplate).transform.SetParent(PlayerHand.transform);

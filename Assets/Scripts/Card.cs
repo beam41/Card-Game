@@ -5,11 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
-    public int number;
+    public int charge;
+    public string fullName;
+    public string symbol;
 
     public void Print()
     {
-        Debug.Log("Value : " + number);
+        Debug.Log(symbol + " : " + fullName + " : " + charge);
     }
 
 }
