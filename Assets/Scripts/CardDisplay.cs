@@ -11,9 +11,8 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI fullName;
     public TextMeshProUGUI symbol;
     public PlayerHand playerHandScript;
-    
+
     private bool selected = false;
-    
     private void Start()
     {
         if(card.charge > 0) charge.text = "+" + card.charge.ToString(); 
@@ -38,4 +37,6 @@ public class CardDisplay : MonoBehaviour
         }
 
     }
+    public bool isSelected() { return selected; }
+    public void setToNotSelected() { selected = false; }
 }
