@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87dbf233252b4704cbd72f9f9c720fe0, type: 3}
   m_Name: Br-Bromine
   m_EditorClassIdentifier: 
-  charge: 0
-  fullName: 
-  symbol: 
+  charge: -1
+  fullName: Bromine
+  symbol: Br

@@ -6,12 +6,22 @@ public class Player : MonoBehaviour
 {
     public bool playerTurn { get; set;}
     public GameObject PlayerHand;
-    private PlayerHand playerHandScript;
+    public PlayerHand playerHandScript;
+    public GameObject ThrowButton;
+    public Bot BotScript;
+    public bool bot = false;
 
     private void Start()
     {
         playerTurn = false;
-        playerHandScript = PlayerHand.GetComponent<PlayerHand>();
+    }
 
+    private void Update()
+    {
+        ThrowButton.SetActive(playerTurn);
+        if (bot && playerTurn)
+        {
+            BotScript.BotStart();
+        }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Rn-Radon
   m_EditorClassIdentifier: 
   charge: 0
-  fullName: 
-  symbol: 
+  fullName: Radon
+  symbol: Rn

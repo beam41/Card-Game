@@ -7,7 +7,7 @@ public class CardManager : MonoBehaviour
 {
     public GameObject CardTemplate;
     public HorizontalLayoutGroup horizontalLayout;
-    private BondChecker bondChecker = null;
+    public BondChecker bondChecker;
 
     //Card
     public Card[] AkiliMetal;
@@ -15,18 +15,60 @@ public class CardManager : MonoBehaviour
     public Card[] Halogen;
     public Card[] NobleGas;
     public Card[] NonMetal;
-    private void Start()
+
+    public void Draw(int n, Player player)
     {
+        SetAllCardNotSelected(player);
+        for (int i = 0; i < n; i++)
+        {
+            Instantiate(RandomCard()).transform.SetParent(player.PlayerHand.transform);
+        }
+        player.playerHandScript.enableLayout();
 
     }
 
-    public void Draw(int n)
+    public void Throw(Player currentPlayer)
     {
-        SetAllCardNotSelected();
-        //playerHandScript.enableLayout();
-        for (int i = 0; i < n; i++)
+        //Debug.Log(PlayerHand.transform.childCount);
+        int CardNum = 0;
+        List<GameObject> CardList = new List<GameObject>();
+        for (int i = 0; i < currentPlayer.PlayerHand.transform.childCount; i++)
         {
-            //Instantiate(RandomCard()).transform.SetParent(PlayerHand.transform);
+            GameObject currentCard = currentPlayer.PlayerHand.transform.GetChild(i).gameObject;
+            if (currentCard.GetComponent<CardDisplay>().isSelected())
+            {
+                CardList.Add(currentCard);
+                CardNum++;
+            }
+        }
+        if (bondChecker.CheckThrowingCard(CardNum, CardList))
+        {
+            Debug.Log("Matched Card");
+            foreach (GameObject Card in CardList)
+            {
+                Destroy(Card);
+            }
+        }
+        else
+        {
+            Debug.Log("Not match Card.");
+            Draw(1, currentPlayer);
+        }
+        currentPlayer.playerHandScript.enableLayout();
+    }
+
+    public void Pass(Player currentPlayer)
+    {
+        Draw(1, currentPlayer);
+    }
+
+
+    // Expandsion Method
+    private void SetAllCardNotSelected(Player player)
+    {
+        for (int i = 0; i < player.PlayerHand.transform.childCount; i++)
+        {
+            player.PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
         }
     }
     private GameObject RandomCard()
@@ -42,48 +84,6 @@ public class CardManager : MonoBehaviour
         else if (SetNum == 7) CardTemplate.GetComponent<CardDisplay>().card = Halogen[Random.Range(0, Halogen.Length)];
         else if (SetNum == 8) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
         return CardTemplate;
-    }
-    public void Throw()
-    {
-        //Debug.Log(PlayerHand.transform.childCount);
-        int CardNum = 0;
-        List<GameObject> CardList = new List<GameObject>();
-        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
-        {
-            GameObject currentCard = PlayerHand.transform.GetChild(i).gameObject;
-            if (currentCard.GetComponent<CardDisplay>().isSelected())
-            {
-                CardList.Add(currentCard);
-                CardNum++;
-            }
-        }*/
-        if (bondChecker.CheckThrowingCard(CardNum, CardList))
-        {
-            Debug.Log("Matched Card");
-            foreach (GameObject Card in CardList)
-            {
-                Destroy(Card);
-            }
-        }
-        else
-        {
-            Debug.Log("Not match Card.");
-            Draw(1);
-        }
-        //playerHandScript.enableLayout();
-    }
-
-    public void Pass()
-    {
-        Draw(1);
-    }
-
-    private void SetAllCardNotSelected()
-    {
-        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
-        {
-            PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
-        }*/
     }
 
 
