@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class CardManager : MonoBehaviour
 {
-    public GameObject PlayerHand;
     public GameObject CardTemplate;
     public HorizontalLayoutGroup horizontalLayout;
-    private PlayerHand playerHandScript;
-    private BondChecker bondChecker;
+    private BondChecker bondChecker = null;
 
     //Card
     public Card[] AkiliMetal;
@@ -19,23 +17,21 @@ public class CardManager : MonoBehaviour
     public Card[] NonMetal;
     private void Start()
     {
-        playerHandScript = PlayerHand.GetComponent<PlayerHand>();
-        CardTemplate.GetComponent<CardDisplay>().playerHandScript = playerHandScript;
 
     }
 
     public void Draw(int n)
     {
         SetAllCardNotSelected();
-        playerHandScript.enableLayout();
+        //playerHandScript.enableLayout();
         for (int i = 0; i < n; i++)
         {
-            Instantiate(RandomCard()).transform.SetParent(PlayerHand.transform);
+            //Instantiate(RandomCard()).transform.SetParent(PlayerHand.transform);
         }
     }
     private GameObject RandomCard()
     {
-        int[] RandomSet = { 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 8 }; //{1, 1, 1, 3, 4, 5, 6, 7, 7, 7, 8}
+        int[] RandomSet = { 1, 1, 2, 3, 4, 5, 6, 6, 7, 7, 7, 8 }; //{1, 1, 1, 3, 4, 5, 6, 7, 7, 7, 8}
         int SetNum = Random.Range(0, RandomSet.Length);
         if (SetNum == 1) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
         else if (SetNum == 2) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
@@ -52,7 +48,7 @@ public class CardManager : MonoBehaviour
         //Debug.Log(PlayerHand.transform.childCount);
         int CardNum = 0;
         List<GameObject> CardList = new List<GameObject>();
-        for (int i = 0; i < PlayerHand.transform.childCount; i++)
+        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
         {
             GameObject currentCard = PlayerHand.transform.GetChild(i).gameObject;
             if (currentCard.GetComponent<CardDisplay>().isSelected())
@@ -60,7 +56,7 @@ public class CardManager : MonoBehaviour
                 CardList.Add(currentCard);
                 CardNum++;
             }
-        }
+        }*/
         if (bondChecker.CheckThrowingCard(CardNum, CardList))
         {
             Debug.Log("Matched Card");
@@ -74,11 +70,8 @@ public class CardManager : MonoBehaviour
             Debug.Log("Not match Card.");
             Draw(1);
         }
-        playerHandScript.enableLayout();
+        //playerHandScript.enableLayout();
     }
-
-
-
 
     public void Pass()
     {
@@ -87,10 +80,10 @@ public class CardManager : MonoBehaviour
 
     private void SetAllCardNotSelected()
     {
-        for (int i = 0; i < PlayerHand.transform.childCount; i++)
+        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
         {
             PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
-        }
+        }*/
     }
 
 
