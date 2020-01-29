@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BondChecker
+public class BondChecker : MonoBehaviour
 {
     public bool CheckThrowingCard(int CardNum, List<GameObject> CardList)
     {

@@ -177,6 +177,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
+--- !u!1 &56877068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56877070}
+  - component: {fileID: 56877069}
+  m_Layer: 0
+  m_Name: BondChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &56877069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56877068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980c5568db74ca941810cb0b9242c6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &56877070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56877068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06500268, y: 0.49036872, z: -0.10561967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351975164
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +252,7 @@ MonoBehaviour:
   CardTemplate: {fileID: 3121681794016666794, guid: 27185af0b3cebf245a9e18b692fd676f,
     type: 3}
   horizontalLayout: {fileID: 1571389540}
+  bondChecker: {fileID: 56877069}
   AkiliMetal:
   - {fileID: 11400000, guid: 91709435010ab9f4999a323440bc49ab, type: 2}
   - {fileID: 11400000, guid: dadedf0cac99a4f07b80dde6cc2f19d0, type: 2}
@@ -427,7 +471,7 @@ RectTransform:
   m_Children:
   - {fileID: 876514958}
   m_Father: {fileID: 1592865983}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -477,9 +521,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 351975165}
-        m_MethodName: Draw
-        m_Mode: 3
+      - m_Target: {fileID: 856075979}
+        m_MethodName: PlayerThrowCard
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -645,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &856075979
 MonoBehaviour:
@@ -718,7 +762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Draw
+  m_text: Throw
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -932,6 +976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1571389538}
   playerHandScript: {fileID: 1571389543}
+  ThrowButton: {fileID: 699838953}
 --- !u!4 &1137352436
 Transform:
   m_ObjectHideFlags: 0
@@ -944,7 +989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362186289
 GameObject:
@@ -1076,7 +1121,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1592865983}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1095,6 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07be284b614553a4aa5d5e22c6837b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalLayout: {fileID: 1492273701}
 --- !u!114 &1492273701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1234,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1592865983}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1268,6 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07be284b614553a4aa5d5e22c6837b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalLayout: {fileID: 1571389540}
 --- !u!1 &1592865979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,10 +1407,10 @@ RectTransform:
   m_Children:
   - {fileID: 1730803947}
   - {fileID: 2002583186}
-  - {fileID: 699838954}
   - {fileID: 2086083206}
   - {fileID: 1571389539}
   - {fileID: 1492273699}
+  - {fileID: 699838954}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1716,7 +1763,7 @@ RectTransform:
   m_Children:
   - {fileID: 356157295}
   m_Father: {fileID: 1592865983}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1844,6 +1891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1492273698}
   playerHandScript: {fileID: 1492273700}
+  ThrowButton: {fileID: 699838953}
 --- !u!4 &2094945414
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,7 +1904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134360843
 GameObject:

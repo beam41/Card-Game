@@ -5,13 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHand : MonoBehaviour
 {
-    private HorizontalLayoutGroup horizontalLayout;
-
-    private void Start()
-    {
-        horizontalLayout = GetComponent<HorizontalLayoutGroup>();
-    }
-
+    public HorizontalLayoutGroup horizontalLayout;
 
     public void disableLayout()
     {
