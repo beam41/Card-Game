@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -252,24 +252,46 @@ MonoBehaviour:
   CardTemplate: {fileID: 3121681794016666794, guid: 27185af0b3cebf245a9e18b692fd676f,
     type: 3}
   horizontalLayout: {fileID: 1571389540}
-  bondChecker: {fileID: 56877069}
   AkiliMetal:
   - {fileID: 11400000, guid: 91709435010ab9f4999a323440bc49ab, type: 2}
+  - {fileID: 11400000, guid: 6e53ded12269d4f25804c22f904052fd, type: 2}
+  - {fileID: 11400000, guid: eee4ec4f491c745b3842f1e9cb2a228a, type: 2}
+  - {fileID: 11400000, guid: f080ae7c3847743589407b7a90157e9b, type: 2}
   - {fileID: 11400000, guid: dadedf0cac99a4f07b80dde6cc2f19d0, type: 2}
+  - {fileID: 11400000, guid: adb346b5b11cf480fa3b39d01c968f14, type: 2}
   AkaliEarthMetal:
+  - {fileID: 11400000, guid: 28e4b593cc80e436fa3e2d901313920f, type: 2}
   - {fileID: 11400000, guid: 8c576f8d8b2601843a114fb98c8edbc5, type: 2}
+  - {fileID: 11400000, guid: b7991d6f3bab846b1acb5f72c1403f91, type: 2}
   - {fileID: 11400000, guid: 8f02893fdd0abae4f8cd087a477338e6, type: 2}
+  - {fileID: 11400000, guid: 8a5e9e0e6b84c447f85dc109b02edab3, type: 2}
+  - {fileID: 11400000, guid: 842e410dc4b27417c8aa34bc143d4d16, type: 2}
   Halogen:
+  - {fileID: 11400000, guid: b62299458e23742d883077688ae14149, type: 2}
+  - {fileID: 11400000, guid: 76e9685f57ba2410fa2d90f43871816c, type: 2}
   - {fileID: 11400000, guid: 8614708753c4acc419e481992a032664, type: 2}
   - {fileID: 11400000, guid: c1ad35fa6e56ac049ac91c530938a16e, type: 2}
+  - {fileID: 11400000, guid: 50f117a20dc064c86bb1355c032122cd, type: 2}
+  - {fileID: 11400000, guid: bd92aeb5821e646e3a792cfc86f0751f, type: 2}
   NobleGas:
-  - {fileID: 11400000, guid: 1f2a61aff6479704dbc6165458adf5c7, type: 2}
-  - {fileID: 11400000, guid: 2dcd7ba958bba5341ab4f07cd492f55e, type: 2}
-  - {fileID: 11400000, guid: 3a68636b20802b54eb2aaa0910b26172, type: 2}
-  - {fileID: 11400000, guid: cd880cf6c28b57b4999efddec8109c77, type: 2}
-  NonMetal:
+  - {fileID: 11400000, guid: a493a230a86be4846bcf1192a5811f87, type: 2}
   - {fileID: 11400000, guid: fa1b6740ba4fca44a9a68661006684cb, type: 2}
+  - {fileID: 11400000, guid: ff4097ac1a0794dd5ad68d4d738d83a1, type: 2}
   - {fileID: 11400000, guid: d447c6597b74a7d40a04ece8c6009b69, type: 2}
+  - {fileID: 11400000, guid: 3638ddf20cb9e4192b9091fdc476ba11, type: 2}
+  - {fileID: 11400000, guid: 765622c19956148cfb1c5323353481d5, type: 2}
+  NonMetal:
+  - {fileID: 11400000, guid: a8d5ad056bc7940949fc95f0e9b4211a, type: 2}
+  - {fileID: 11400000, guid: a516b6579d1234638b075fc5e50478e3, type: 2}
+  - {fileID: 11400000, guid: 1f2a61aff6479704dbc6165458adf5c7, type: 2}
+  - {fileID: 11400000, guid: d56c0bcc8c1384530b05c66f69601277, type: 2}
+  - {fileID: 11400000, guid: 2dcd7ba958bba5341ab4f07cd492f55e, type: 2}
+  - {fileID: 11400000, guid: cd880cf6c28b57b4999efddec8109c77, type: 2}
+  - {fileID: 11400000, guid: e927c23f87c4d4621925aaecd66a371d, type: 2}
+  - {fileID: 11400000, guid: d6521792c53fd4bd783095d7cb7c35ee, type: 2}
+  - {fileID: 11400000, guid: 4c3bdb135deb24153a40fc9da8340038, type: 2}
+  - {fileID: 11400000, guid: 3a68636b20802b54eb2aaa0910b26172, type: 2}
+  - {fileID: 11400000, guid: 5264135a8a46c48048205bee53d17861, type: 2}
 --- !u!4 &351975166
 Transform:
   m_ObjectHideFlags: 0
@@ -547,9 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e010465c37c364856918f2c20c74518d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerList:
-  - {fileID: 1137352435}
-  - {fileID: 0}
+  playerArray: []
   cardManager: {fileID: 351975165}
 --- !u!1 &876514957
 GameObject:
@@ -819,10 +839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1571389538}
-  playerHandScript: {fileID: 1571389543}
-  ThrowButton: {fileID: 699838953}
-  BotScript: {fileID: 1503268726}
-  bot: 0
 --- !u!4 &1137352436
 Transform:
   m_ObjectHideFlags: 0
@@ -888,7 +904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07be284b614553a4aa5d5e22c6837b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalLayout: {fileID: 1492273701}
 --- !u!114 &1492273701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07be284b614553a4aa5d5e22c6837b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalLayout: {fileID: 1571389540}
 --- !u!1 &1592865979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,10 +1566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1492273698}
-  playerHandScript: {fileID: 1492273700}
-  ThrowButton: {fileID: 699838953}
-  BotScript: {fileID: 1503268726}
-  bot: 1
 --- !u!4 &2094945414
 Transform:
   m_ObjectHideFlags: 0
