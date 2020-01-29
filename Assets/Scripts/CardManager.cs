@@ -9,6 +9,7 @@ public class CardManager : MonoBehaviour
     public HorizontalLayoutGroup horizontalLayout;
     public BondChecker bondChecker;
 
+
     //Card
     public Card[] AkiliMetal;
     public Card[] AkaliEarthMetal;
@@ -44,6 +45,7 @@ public class CardManager : MonoBehaviour
         if (bondChecker.CheckThrowingCard(CardNum, CardList))
         {
             Debug.Log("Matched Card");
+            currentPlayer.addScore(CardNum);
             foreach (GameObject Card in CardList)
             {
                 Destroy(Card);
