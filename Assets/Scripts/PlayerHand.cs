@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHand : MonoBehaviour
 {
     public HorizontalLayoutGroup horizontalLayout;
-
+    
     public void disableLayout()
     {
         horizontalLayout.enabled = false;

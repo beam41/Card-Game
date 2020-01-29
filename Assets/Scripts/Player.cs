@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public GameObject PlayerHand;
     public PlayerHand playerHandScript;
     public GameObject ThrowButton;
+    public Bot BotScript;
+    public bool bot = false;
 
     private void Start()
     {
@@ -17,5 +19,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         ThrowButton.SetActive(playerTurn);
+        if (bot && playerTurn)
+        {
+            BotScript.BotStart();
+        }
     }
 }
