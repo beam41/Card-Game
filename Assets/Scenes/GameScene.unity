@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4154779130590934, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4154779130590934, guid: 00284cf2de272b74d864cac5ee59c480, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -413,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &699838954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -614,7 +614,7 @@ Transform:
   m_Children:
   - {fileID: 1362186290}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &856075977
 GameObject:
@@ -659,7 +659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e010465c37c364856918f2c20c74518d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerArray: []
+  playerList:
+  - {fileID: 1137352435}
+  - {fileID: 2094945413}
   cardManager: {fileID: 351975165}
 --- !u!1 &876514957
 GameObject:
@@ -897,7 +899,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 18, y: 0, z: 0}
 --- !u!1 &1137352434
 GameObject:
@@ -929,6 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1571389538}
+  playerHandScript: {fileID: 1571389543}
 --- !u!4 &1137352436
 Transform:
   m_ObjectHideFlags: 0
@@ -1362,7 +1365,7 @@ RectTransform:
   - {fileID: 1571389539}
   - {fileID: 1492273699}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1699,7 +1702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2086083206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1764,8 +1767,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 351975165}
-        m_MethodName: Draw
-        m_Mode: 3
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1840,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 1492273698}
+  playerHandScript: {fileID: 1492273700}
 --- !u!4 &2094945414
 Transform:
   m_ObjectHideFlags: 0
@@ -1918,5 +1922,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

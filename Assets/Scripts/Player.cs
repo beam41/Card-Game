@@ -6,12 +6,11 @@ public class Player : MonoBehaviour
 {
     public bool playerTurn { get; set;}
     public GameObject PlayerHand;
-    private PlayerHand playerHandScript;
+    public PlayerHand playerHandScript;
 
     private void Start()
     {
         playerTurn = false;
-        playerHandScript = PlayerHand.GetComponent<PlayerHand>();
-
+        
     }
 }

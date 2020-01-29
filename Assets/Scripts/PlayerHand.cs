@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerHand : MonoBehaviour
 {
     private HorizontalLayoutGroup horizontalLayout;
-    private List<CardDisplay> selectedCards;
 
     private void Start()
     {

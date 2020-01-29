@@ -20,13 +20,13 @@ public class CardManager : MonoBehaviour
 
     }
 
-    public void Draw(int n)
+    public void Draw(int n, Player player)
     {
-        SetAllCardNotSelected();
-        //playerHandScript.enableLayout();
+        SetAllCardNotSelected(player);
+        player.playerHandScript.enableLayout();
         for (int i = 0; i < n; i++)
         {
-            //Instantiate(RandomCard()).transform.SetParent(PlayerHand.transform);
+            Instantiate(RandomCard()).transform.SetParent(player.PlayerHand.transform);
         }
     }
     private GameObject RandomCard()
@@ -43,20 +43,20 @@ public class CardManager : MonoBehaviour
         else if (SetNum == 8) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
         return CardTemplate;
     }
-    public void Throw()
+    public void Throw(Player currentPlayer)
     {
         //Debug.Log(PlayerHand.transform.childCount);
         int CardNum = 0;
         List<GameObject> CardList = new List<GameObject>();
-        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
+        for (int i = 0; i < currentPlayer.PlayerHand.transform.childCount; i++)
         {
-            GameObject currentCard = PlayerHand.transform.GetChild(i).gameObject;
+            GameObject currentCard = currentPlayer.PlayerHand.transform.GetChild(i).gameObject;
             if (currentCard.GetComponent<CardDisplay>().isSelected())
             {
                 CardList.Add(currentCard);
                 CardNum++;
             }
-        }*/
+        }
         if (bondChecker.CheckThrowingCard(CardNum, CardList))
         {
             Debug.Log("Matched Card");
@@ -68,22 +68,22 @@ public class CardManager : MonoBehaviour
         else
         {
             Debug.Log("Not match Card.");
-            Draw(1);
+            Draw(1, currentPlayer);
         }
-        //playerHandScript.enableLayout();
+        currentPlayer.playerHandScript.enableLayout();
     }
 
-    public void Pass()
+    public void Pass(Player currentPlayer)
     {
-        Draw(1);
+        Draw(1, currentPlayer);
     }
 
-    private void SetAllCardNotSelected()
+    private void SetAllCardNotSelected(Player player)
     {
-        /*for (int i = 0; i < PlayerHand.transform.childCount; i++)
+        for (int i = 0; i < player.PlayerHand.transform.childCount; i++)
         {
-            PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
-        }*/
+            player.PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
+        }
     }
 
 
