@@ -7,28 +7,46 @@ public class CardManager : MonoBehaviour
 {
     public GameObject PlayerHand;
     public GameObject CardTemplate;
-    public Card[] allCard;
     public HorizontalLayoutGroup horizontalLayout;
     private PlayerHand playerHandScript;
+    private BondChecker bondChecker;
+
+    //Card
+    public Card[] AkiliMetal;
+    public Card[] AkaliEarthMetal;
+    public Card[] Halogen;
+    public Card[] NobleGas;
+    public Card[] NonMetal;
     private void Start()
     {
         playerHandScript = PlayerHand.GetComponent<PlayerHand>();
+        CardTemplate.GetComponent<CardDisplay>().playerHandScript = playerHandScript;
+
     }
 
     public void Draw(int n)
     {
         SetAllCardNotSelected();
         playerHandScript.enableLayout();
-        for (int i = 0; i < n && allCard.Length != 0; i++)
+        for (int i = 0; i < n; i++)
         {
-            int rand_num = Random.Range(0, allCard.Length);
-            CardTemplate.GetComponent<CardDisplay>().card = allCard[rand_num];
-            CardTemplate.GetComponent<CardDisplay>().playerHandScript = playerHandScript;
-            Instantiate(CardTemplate).transform.SetParent(PlayerHand.transform);
-
+            Instantiate(RandomCard()).transform.SetParent(PlayerHand.transform);
         }
     }
-
+    private GameObject RandomCard()
+    {
+        int[] RandomSet = { 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 8 }; //{1, 1, 1, 3, 4, 5, 6, 7, 7, 7, 8}
+        int SetNum = Random.Range(0, RandomSet.Length);
+        if (SetNum == 1) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
+        else if (SetNum == 2) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
+        else if (SetNum == 3) CardTemplate.GetComponent<CardDisplay>().card = AkaliEarthMetal[Random.Range(0, AkaliEarthMetal.Length)];
+        else if (SetNum == 4) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
+        else if (SetNum == 5) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
+        else if (SetNum == 6) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
+        else if (SetNum == 7) CardTemplate.GetComponent<CardDisplay>().card = Halogen[Random.Range(0, Halogen.Length)];
+        else if (SetNum == 8) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
+        return CardTemplate;
+    }
     public void Throw()
     {
         //Debug.Log(PlayerHand.transform.childCount);
@@ -43,7 +61,7 @@ public class CardManager : MonoBehaviour
                 CardNum++;
             }
         }
-        if (CheckThrowingCard(CardNum, CardList))
+        if (bondChecker.CheckThrowingCard(CardNum, CardList))
         {
             Debug.Log("Matched Card");
             foreach (GameObject Card in CardList)
@@ -59,16 +77,7 @@ public class CardManager : MonoBehaviour
         playerHandScript.enableLayout();
     }
 
-    private int SumCharge(List<GameObject> CardList)
-    {
-        int result = 0;
-        foreach (GameObject Card in CardList)
-        {
-            result += Card.GetComponent<CardDisplay>().card.charge;
-        }
 
-        return result;
-    }
 
 
     public void Pass()
@@ -84,11 +93,6 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    private bool CheckThrowingCard(int CardNum, List<GameObject> CardList)
-    {
-        if (CardNum == 0) return false;
-        else if (SumCharge(CardList) == 0) return true;
-        else return false;
-    }
+
 
 }

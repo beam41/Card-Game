@@ -16,7 +16,7 @@ public class CardDisplay : MonoBehaviour
     private void Start()
     {
         if(card.charge > 0) charge.text = "+" + card.charge.ToString(); 
-        else if(card.charge < 0) charge.text = "-" + card.charge.ToString();
+        else if(card.charge < 0) charge.text = card.charge.ToString();
         else charge.text = "";
         fullName.text = card.fullName.ToString();
         symbol.text = card.symbol.ToString ();
@@ -27,12 +27,12 @@ public class CardDisplay : MonoBehaviour
         playerHandScript.disableLayout();
         if (!selected)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+30f, 0);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+40f, 0);
             selected = true;
         }
         else
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y-30f, 0);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y-40f, 0);
             selected = false;
         }
 
