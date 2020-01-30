@@ -15,17 +15,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float PlayerScore;
     public bool bot = false;
     public TextMeshProUGUI Score;
-
-
-    private void Start()
-    {
+    private void Awake() {
         playerTurn = false;
     }
 
     private void Update()
     {
-        ThrowButton.SetActive(playerTurn);
-        Timer.SetActive(playerTurn);
+        Debug.Log(playerName + ": " + playerTurn);
         Score.text = "Score\n"+PlayerScore.ToString("000");
         if (bot && playerTurn)
         {
@@ -36,5 +32,14 @@ public class Player : MonoBehaviour
     public void addScore(int n)
     {
         PlayerScore += Mathf.Pow(2, n);
+    }
+
+    public void activeUI(){
+        ThrowButton.SetActive(true);
+        Timer.SetActive(true);
+    }
+    public void deactiveUI(){
+        ThrowButton.SetActive(false);
+        Timer.SetActive(false);
     }
 }

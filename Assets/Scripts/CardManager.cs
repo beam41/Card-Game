@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class CardManager : MonoBehaviour
 {
     public GameObject CardTemplate;
-    public HorizontalLayoutGroup horizontalLayout;
     public BondChecker bondChecker;
-
 
     //Card
     public Card[] AkiliMetal;

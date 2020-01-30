@@ -9,18 +9,17 @@ public class GameManager : MonoBehaviour
 
     public Player[] playerList;
     public CardManager cardManager;
-    private Player CurrentPlayer;
+    public Player CurrentPlayer;
     private int playerIndex;
     private float timer;
     public TextMeshProUGUI TurnCounter;
     public TextMeshProUGUI TimeCounter;
-    // You is Player_1
+
     private void Start()
     {
         playerIndex = 0;
         turnCount = 0;
         GameStart();
-        turnStart(playerList[playerIndex]);
     }
 
     private void Update()
@@ -39,6 +38,7 @@ public class GameManager : MonoBehaviour
         {
             cardManager.Draw(5, playerList[i]);
         }
+        turnStart(playerList[playerIndex]);
 
     }
 
@@ -56,16 +56,17 @@ public class GameManager : MonoBehaviour
 
     private void turnStart(Player player)
     {
-        //CurrentPlayer Time
         timer = 10f;
         CurrentPlayer = player;
         CurrentPlayer.playerTurn = true;
+        CurrentPlayer.enabled = true;
         cardManager.Draw(1, CurrentPlayer);
         turnCount++;
     }
 
     private void changePlayerTurn()
     {
+        CurrentPlayer.enabled = false;
         CurrentPlayer.playerTurn = false;
         playerIndex = (playerIndex+1)%playerList.Length;
         turnStart(playerList[playerIndex]);
