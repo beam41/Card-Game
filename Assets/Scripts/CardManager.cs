@@ -22,7 +22,7 @@ public class CardManager : MonoBehaviour
         SetAllCardNotSelected(player);
         for (int i = 0; i < n; i++)
         {
-            Instantiate(RandomCard()).transform.SetParent(player.PlayerHand.transform);
+            Instantiate(RandomCard(player)).transform.SetParent(player.PlayerHand.transform);
         }
         player.playerHandScript.enableLayout();
 
@@ -73,8 +73,9 @@ public class CardManager : MonoBehaviour
             player.PlayerHand.transform.GetChild(i).GetComponent<CardDisplay>().setToNotSelected();
         }
     }
-    private GameObject RandomCard()
+    private GameObject RandomCard(Player player)
     {
+        CardTemplate.GetComponent<CardDisplay>().playerHandScript = player.playerHandScript;
         int[] RandomSet = { 1, 1, 2, 3, 4, 5, 6, 6, 7, 7, 7, 8 }; //{1, 1, 1, 3, 4, 5, 6, 7, 7, 7, 8}
         int SetNum = Random.Range(0, RandomSet.Length);
         if (SetNum == 1) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
