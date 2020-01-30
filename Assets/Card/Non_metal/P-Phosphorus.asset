@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: -3
   fullName: Phosphorus
   symbol: P
+  atomType: 4

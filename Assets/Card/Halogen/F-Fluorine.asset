@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: -1
   fullName: Fluorine
   symbol: F
+  atomType: 2

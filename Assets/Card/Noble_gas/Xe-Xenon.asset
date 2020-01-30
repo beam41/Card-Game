@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 0
   fullName: Xenon
   symbol: Xe
+  atomType: 2
