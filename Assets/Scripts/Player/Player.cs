@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log(playerName + ": " + playerTurn);
         Score.text = "Score\n"+PlayerScore.ToString("000");
+        
         if (bot && playerTurn)
         {
             BotScript.BotStart();

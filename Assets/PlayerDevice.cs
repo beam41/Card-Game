@@ -11,7 +11,6 @@ public class PlayerDevice : MonoBehaviour
 
     private void Start() {
         PlayerHand.SetActive(true);
-        // OwnerDevice.SetActive(true);
         OwnerPlayer = OwnerDevice.GetComponent<Player>();
     }
     private void Update() {
