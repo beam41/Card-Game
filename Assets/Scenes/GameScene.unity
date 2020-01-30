@@ -1442,7 +1442,7 @@ MonoBehaviour:
   Timer: {fileID: 1113730702}
   BotScript: {fileID: 1503268726}
   PlayerScore: 0
-  bot: 1
+  bot: 0
   Score: {fileID: 1730803948}
 --- !u!4 &1137352436
 Transform:
