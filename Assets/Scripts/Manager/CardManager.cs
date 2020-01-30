@@ -10,6 +10,7 @@ public class CardManager : MonoBehaviour
     public Transform CardSpawnPoint;
     public BondChecker bondChecker;
     public GameObject Model;
+    public Camera firstPersonCamera;
 
     //Card
     public Card[] AkiliMetal;
@@ -17,6 +18,12 @@ public class CardManager : MonoBehaviour
     public Card[] Halogen;
     public Card[] NobleGas;
     public Card[] NonMetal;
+
+
+    private void Start() {
+        firstPersonCamera = GameObject.FindGameObjectWithTag("MainCamera").transform.GetChild(0).GetComponent<Camera>();
+        Debug.Log(firstPersonCamera.transform.name);
+    }
 
     public void Draw(int n, Player player)
     {
@@ -48,7 +55,10 @@ public class CardManager : MonoBehaviour
         {
             Debug.Log("Matched Card");
             currentPlayer.addScore(CardNum);
-            Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation).transform.SetParent(Model.transform);
+            var newCard = Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation);
+            newCard.transform.GetChild(0).GetComponent<Canvas>().worldCamera = firstPersonCamera;
+            newCard.transform.SetParent(Model.transform);
+            
             foreach (GameObject Card in CardList)
             {
                 Destroy(Card);
