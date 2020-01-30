@@ -17,7 +17,6 @@ public class Card3DDisplay : MonoBehaviour
     {
         GenerateNameAndSymbol();
     }
-
     private void GenerateNameAndSymbol(){
         var atomList = new Dictionary<string, int>();
         int positiveCharge = 0;
@@ -34,22 +33,30 @@ public class Card3DDisplay : MonoBehaviour
                 negativeCharge++;
                 negativeAtom = card;
             }
+
         }
-        symbol.text = positiveAtom.symbol.ToString();
-        symbol_.text = negativeAtom.symbol.ToString();
-        // fullName.text =  positiveAtom.fullName.ToString();
+
+        if(positiveCharge == 0 && negativeCharge == 0){
+            symbol.text = "";
+            symbol_.text = "";
+            fullName.text = "Noble";
+            return;
+        }
 
         fullName.text = "";
+        symbol.text = positiveAtom.symbol.ToString();
+        symbol_.text = negativeAtom.symbol.ToString();
 
         if(positiveCharge == 1) fullName.text += positiveAtom.fullName;
         else fullName.text += prefixNum[positiveCharge] + positiveAtom.fullName;
         if(negativeCharge == 1) fullName.text += negativeAtom.negativeName;
         else fullName.text += prefixNum[negativeCharge] + negativeAtom.negativeName;
 
-        symbol.text = positiveAtom.symbol;
-        symbol_.text = negativeAtom.symbol;
-        frontNum.text = positiveCharge.ToString();
-        backNum.text = negativeCharge.ToString();
+        symbol_.text = positiveAtom.symbol;
+        symbol.text = negativeAtom.symbol;
+        if(positiveCharge > 1) frontNum.text = positiveCharge.ToString();
+        if(negativeCharge > 1) backNum.text = negativeCharge.ToString();
     }
 
+    
 }

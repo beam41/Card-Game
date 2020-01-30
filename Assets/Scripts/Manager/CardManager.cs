@@ -9,6 +9,7 @@ public class CardManager : MonoBehaviour
     public GameObject Card3DTemplate;
     public Transform CardSpawnPoint;
     public BondChecker bondChecker;
+    public GameObject Model;
 
     //Card
     public Card[] AkiliMetal;
@@ -47,7 +48,7 @@ public class CardManager : MonoBehaviour
         {
             Debug.Log("Matched Card");
             currentPlayer.addScore(CardNum);
-            Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation);
+            Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation).transform.SetParent(Model.transform);
             foreach (GameObject Card in CardList)
             {
                 Destroy(Card);
