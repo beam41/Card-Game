@@ -467,6 +467,7 @@ MonoBehaviour:
   CardSpawnPoint: {fileID: 7802507423861119425}
   bondChecker: {fileID: 5935370636861670016}
   Model: {fileID: 7802507423861119431}
+  firstPersonCamera: {fileID: 0}
   AkiliMetal:
   - {fileID: 11400000, guid: 91709435010ab9f4999a323440bc49ab, type: 2}
   - {fileID: 11400000, guid: 6e53ded12269d4f25804c22f904052fd, type: 2}
@@ -1512,7 +1513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5935370637952240642
 RectTransform:
   m_ObjectHideFlags: 0
