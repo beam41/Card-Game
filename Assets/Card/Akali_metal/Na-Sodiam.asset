@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 1
   fullName: Sodiam
+  negativeName: Sodiam
   symbol: Na
   atomType: 1

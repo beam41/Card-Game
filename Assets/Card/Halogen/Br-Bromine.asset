@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -1
   fullName: Bromine
+  negativeName: Bromine
   symbol: Br
   atomType: 2

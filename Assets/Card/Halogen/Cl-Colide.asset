@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cl-Colide
   m_EditorClassIdentifier: 
   charge: -1
-  fullName: Colide
+  fullName: Chloride
+  negativeName: Chloride
   symbol: Cl
   atomType: 2

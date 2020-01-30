@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 4
   fullName: Silicon
+  negativeName: Silicon
   symbol: Si
   atomType: 4

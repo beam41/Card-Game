@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 1
   fullName: Potassium
+  negativeName: Potassium
   symbol: K
   atomType: 1

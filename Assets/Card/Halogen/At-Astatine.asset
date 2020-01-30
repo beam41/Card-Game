@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -1
   fullName: Astatine
+  negativeName: Astatine
   symbol: At
   atomType: 2

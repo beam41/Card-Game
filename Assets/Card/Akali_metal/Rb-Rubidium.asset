@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 1
   fullName: Rubidium
+  negativeName: Rubidium
   symbol: Rb
   atomType: 1

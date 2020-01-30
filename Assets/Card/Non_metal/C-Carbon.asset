@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 4
   fullName: Carbon
+  negativeName: Carbon
   symbol: C
   atomType: 4
