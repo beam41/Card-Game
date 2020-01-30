@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CardRigiControl : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody rgBody;
 
     private void Start() {
-        rigidbody = GetComponent<Rigidbody>();
+        rgBody = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionStay(Collision other) {
-        rigidbody.isKinematic = true;
+        rgBody.isKinematic = true;
     }
 
 }
