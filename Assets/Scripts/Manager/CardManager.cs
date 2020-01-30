@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CardManager : MonoBehaviour
 {
     public GameObject CardTemplate;
+    public GameObject Card3DTemplate;
+    public Transform CardSpawnPoint;
     public BondChecker bondChecker;
 
     //Card
@@ -28,15 +30,16 @@ public class CardManager : MonoBehaviour
 
     public void Throw(Player currentPlayer)
     {
-        //Debug.Log(PlayerHand.transform.childCount);
         int CardNum = 0;
         List<GameObject> CardList = new List<GameObject>();
+        List<Card> Cards = new List<Card>();
         for (int i = 0; i < currentPlayer.PlayerHand.transform.childCount; i++)
         {
             GameObject currentCard = currentPlayer.PlayerHand.transform.GetChild(i).gameObject;
             if (currentCard.GetComponent<CardDisplay>().isSelected())
             {
                 CardList.Add(currentCard);
+                Cards.Add(currentCard.GetComponent<CardDisplay>().card);
                 CardNum++;
             }
         }
@@ -44,6 +47,7 @@ public class CardManager : MonoBehaviour
         {
             Debug.Log("Matched Card");
             currentPlayer.addScore(CardNum);
+            Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation);
             foreach (GameObject Card in CardList)
             {
                 Destroy(Card);
@@ -85,6 +89,11 @@ public class CardManager : MonoBehaviour
         else if (SetNum == 7) CardTemplate.GetComponent<CardDisplay>().card = Halogen[Random.Range(0, Halogen.Length)];
         else if (SetNum == 8) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
         return CardTemplate;
+    }
+
+    private GameObject getThrowingCard(List<Card> cards){
+        Card3DTemplate.GetComponent<Card3DDisplay>().cards = cards;
+        return Card3DTemplate;
     }
 
 
