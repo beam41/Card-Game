@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 0
   fullName: Helium
+  negativeName: Helium
   symbol: He
   atomType: 2

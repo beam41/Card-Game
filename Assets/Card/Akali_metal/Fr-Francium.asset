@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 1
   fullName: Francium
+  negativeName: Francium
   symbol: Fr
   atomType: 1

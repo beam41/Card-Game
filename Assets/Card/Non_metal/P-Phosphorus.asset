@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -3
   fullName: Phosphorus
+  negativeName: Phosphoride
   symbol: P
   atomType: 4

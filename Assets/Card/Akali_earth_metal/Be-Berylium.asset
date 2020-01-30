@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 2
   fullName: Beryllium
+  negativeName: Beryllium
   symbol: Be
+  atomType: 0

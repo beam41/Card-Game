@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 2
   fullName: Magnesium
+  negativeName: Magnesium
   symbol: Mg
+  atomType: 0

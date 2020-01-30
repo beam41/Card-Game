@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -3
   fullName: Nytrogen
+  negativeName: Nytride
   symbol: N
   atomType: 4

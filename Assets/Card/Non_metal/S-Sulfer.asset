@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -2
   fullName: Sulfur
+  negativeName: Sulfide
   symbol: S
   atomType: 4

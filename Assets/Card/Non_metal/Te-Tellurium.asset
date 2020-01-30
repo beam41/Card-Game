@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: -2
   fullName: Tellurium
+  negativeName: Tellurium
   symbol: Te
   atomType: 4
