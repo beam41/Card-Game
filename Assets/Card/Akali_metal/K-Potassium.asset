@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 1
   fullName: Potassium
   symbol: K
+  atomType: 1

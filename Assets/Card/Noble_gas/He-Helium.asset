@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 0
   fullName: Helium
   symbol: He
+  atomType: 2

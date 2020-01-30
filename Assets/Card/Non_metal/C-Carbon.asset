@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 4
   fullName: Carbon
   symbol: C
+  atomType: 4

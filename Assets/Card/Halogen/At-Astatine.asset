@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: -1
   fullName: Astatine
   symbol: At
+  atomType: 2

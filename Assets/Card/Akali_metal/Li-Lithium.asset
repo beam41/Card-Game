@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 1
   fullName: Lithium
   symbol: Li
+  atomType: 1

@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 0
   fullName: Radon
   symbol: Rn
+  atomType: 2

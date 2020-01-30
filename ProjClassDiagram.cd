@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="BondChecker">
+    <Position X="10.75" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\BondChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bot">
+    <Position X="6.75" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Card">
+    <Position X="15.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Card3DDisplay">
+    <Position X="15" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQIBAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Card3DDisplay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="card" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CardDisplay">
+    <Position X="18.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAAQQCAEAAAAAACAAAAAAAAAAAAAAAAAAgQAAAA=</HashCode>
+      <FileName>Assets\Scripts\CardDisplay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="card" />
+      <Field Name="playerHandScript" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CardManager">
+    <Position X="10.75" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAACAAABAQAAgAAAAAAAGAEAAAAAAAAAQAAAABAEAA=</HashCode>
+      <FileName>Assets\Scripts\CardManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bondChecker" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="AkaliEarthMetal" />
+      <Field Name="Halogen" />
+      <Field Name="NonMetal" />
+      <Field Name="NobleGas" />
+      <Field Name="AkiliMetal" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="6.75" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>KAQAAAAAACQCAAAAAAIAAAAoAAAAIAAAIAABgAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cardManager" />
+      <Field Name="CurrentPlayer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="playerList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ModelManager" Collapsed="true">
+    <Position X="19.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ModelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="2.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAAAgAAAkEAgAgAAEAAAAQAgAAAgAEAMA=</HashCode>
+      <FileName>Assets\Scripts\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="playerHandScript" />
+      <Field Name="BotScript" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerHand">
+    <Position X="10.75" Y="9.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerHand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerDevice">
+    <Position X="6.75" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAACAAAAAAAAAAASAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\PlayerDevice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameManager" />
+      <Field Name="OwnerPlayer" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: 1
   fullName: Hydrogen
   symbol: H
+  atomType: 4

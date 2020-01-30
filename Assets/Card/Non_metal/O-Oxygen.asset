@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: -2
   fullName: Oxygen
   symbol: O
+  atomType: 4

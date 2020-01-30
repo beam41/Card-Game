@@ -15,3 +15,4 @@ MonoBehaviour:
   charge: -2
   fullName: Selenium
   symbol: Se
+  atomType: 4
