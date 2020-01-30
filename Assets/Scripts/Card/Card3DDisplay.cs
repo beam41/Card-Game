@@ -20,14 +20,14 @@ public class Card3DDisplay : MonoBehaviour
         var atomList = new Dictionary<string, int>();
 
 
-        // foreach(Card card in cards){
-        //     if(atomList.ContainsKey(card.name)){
-        //         atomList[card.name]++;
-        //     }
-        //     else{
-        //         atomList[card.name] = 1;
-        //     }
-        // }
+        foreach(Card card in cards){
+            if(atomList.ContainsKey(card.name)){
+                atomList[card.name]++;
+            }
+            else{
+                atomList[card.name] = 1;
+            }
+        }
 
         
     }

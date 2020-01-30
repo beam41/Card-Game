@@ -7,6 +7,7 @@ public class Card : ScriptableObject
 {
     public int charge;
     public string fullName;
+    public string negativeName = "";
     public string symbol;
     public AtomTypeEnum atomType;
 
