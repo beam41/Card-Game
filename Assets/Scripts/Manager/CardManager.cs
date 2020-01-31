@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class CardManager : MonoBehaviour
 {
     public GameObject CardTemplate;
-    public GameObject Card3DTemplate;
+    public GameObject[] Card3DTemplate;
+
     public Transform CardSpawnPoint;
     public BondChecker bondChecker;
     public GameObject Model;
@@ -22,7 +23,6 @@ public class CardManager : MonoBehaviour
 
     private void Start() {
         firstPersonCamera = GameObject.FindGameObjectWithTag("MainCamera").transform.GetChild(0).GetComponent<Camera>();
-        Debug.Log(firstPersonCamera.transform.name);
     }
 
     public void Draw(int n, Player player)
@@ -56,7 +56,8 @@ public class CardManager : MonoBehaviour
             Debug.Log("Matched Card");
             currentPlayer.addScore(CardNum);
             var newCard = Instantiate(getThrowingCard(Cards), CardSpawnPoint.position, CardSpawnPoint.rotation);
-            newCard.transform.GetChild(0).GetComponent<Canvas>().worldCamera = firstPersonCamera;
+            if(firstPersonCamera != null)
+                newCard.transform.GetChild(0).GetComponent<Canvas>().worldCamera = firstPersonCamera;
             newCard.transform.SetParent(Model.transform);
             
             foreach (GameObject Card in CardList)
@@ -89,22 +90,66 @@ public class CardManager : MonoBehaviour
     private GameObject RandomCard(Player player)
     {
         CardTemplate.GetComponent<CardDisplay>().playerHandScript = player.playerHandScript;
-        int[] RandomSet = { 1, 1, 2, 3, 4, 5, 6, 6, 7, 7, 7, 8 }; //{1, 1, 1, 3, 4, 5, 6, 7, 7, 7, 8}
-        int SetNum = Random.Range(0, RandomSet.Length);
-        if (SetNum == 1) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
-        else if (SetNum == 2) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
-        else if (SetNum == 3) CardTemplate.GetComponent<CardDisplay>().card = AkaliEarthMetal[Random.Range(0, AkaliEarthMetal.Length)];
-        else if (SetNum == 4) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
-        else if (SetNum == 5) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
-        else if (SetNum == 6) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
-        else if (SetNum == 7) CardTemplate.GetComponent<CardDisplay>().card = Halogen[Random.Range(0, Halogen.Length)];
-        else if (SetNum == 8) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
+        int randomNum = Random.Range(0, 100);
+        if (randomNum < 25) CardTemplate.GetComponent<CardDisplay>().card = AkiliMetal[Random.Range(0, AkiliMetal.Length)];
+        else if (randomNum >= 25 && randomNum < 40) CardTemplate.GetComponent<CardDisplay>().card = AkaliEarthMetal[Random.Range(0, AkaliEarthMetal.Length)];
+        else if (randomNum >= 40 && randomNum < 65) CardTemplate.GetComponent<CardDisplay>().card = NonMetal[Random.Range(0, NonMetal.Length)];
+        else if (randomNum >= 65 && randomNum < 90) CardTemplate.GetComponent<CardDisplay>().card = Halogen[Random.Range(0, Halogen.Length)];
+        else if (randomNum >= 90 && randomNum < 100) CardTemplate.GetComponent<CardDisplay>().card = NobleGas[Random.Range(0, NobleGas.Length)];
         return CardTemplate;
     }
 
     private GameObject getThrowingCard(List<Card> cards){
-        Card3DTemplate.GetComponent<Card3DDisplay>().cards = cards;
-        return Card3DTemplate;
+        int positiveCharge = 0;
+        int negativeCharge = 0;
+        Card positiveAtom = null;
+        Card negativeAtom = null;
+
+        foreach (Card card in cards)
+        {
+            if (card.charge > 0)
+            {
+                positiveCharge++;
+                positiveAtom = card;
+            }
+            else if (card.charge < 0)
+            {
+                negativeCharge++;
+                negativeAtom = card;
+            }
+
+        }
+        if(positiveAtom.symbol.Length == 1)
+        {
+            if(negativeAtom.symbol.Length == 1)
+            {
+                Card3DTemplate[0].GetComponent<Card3DDisplay>().GenerateNameAndSymbol(positiveAtom, positiveCharge, negativeAtom, negativeCharge);
+                return Card3DTemplate[0];
+            }
+            else
+            {
+                Card3DTemplate[1].GetComponent<Card3DDisplay>().GenerateNameAndSymbol(positiveAtom, positiveCharge, negativeAtom, negativeCharge);
+                return Card3DTemplate[1];
+
+            }
+        }
+        else
+        {
+            if (negativeAtom.symbol.Length == 1)
+            {
+                Card3DTemplate[2].GetComponent<Card3DDisplay>().GenerateNameAndSymbol(positiveAtom, positiveCharge, negativeAtom, negativeCharge);
+                return Card3DTemplate[2];
+
+            }
+            else
+            {
+                Card3DTemplate[3].GetComponent<Card3DDisplay>().GenerateNameAndSymbol(positiveAtom, positiveCharge, negativeAtom, negativeCharge);
+                return Card3DTemplate[3];
+
+            }
+        }
+        //Card3DTemplate.GetComponent<Card3DDisplay>().cards = cards;
+        
     }
 
 
