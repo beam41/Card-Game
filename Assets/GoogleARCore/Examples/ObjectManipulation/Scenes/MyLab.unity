@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44300613, g: 0.49219513, b: 0.57192427, a: 1}
+  m_IndirectSpecularColor: {r: 0.4430062, g: 0.49219507, b: 0.57192457, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -459,6 +459,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114747870037459092, guid: 26558ae1d2e7243728486d789f984c53,
+        type: 3}
+      propertyPath: PointColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26558ae1d2e7243728486d789f984c53, type: 3}
 --- !u!1001 &1796857611
@@ -532,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstPersonCamera: {fileID: 646831371}
-  PawnPrefab: {fileID: 3407248196987431523, guid: 3519e570d7aaf467cb4e26911a7f81e1,
+  PawnPrefab: {fileID: 2966850548215898107, guid: 2cd90592b4f36455491620898ecc6944,
     type: 3}
   ManipulatorPrefab: {fileID: 1122865395318488, guid: 24556cd4924884d9aaa3d80135c8021d,
     type: 3}
