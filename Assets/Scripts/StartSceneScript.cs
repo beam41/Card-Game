@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartSceneScript : MonoBehaviour
 {
@@ -18,5 +19,9 @@ public class StartSceneScript : MonoBehaviour
     {
         registerPage.SetActive(true);
         loginPage.SetActive(false);
+    }
+    
+    public void login(){
+        SceneManager.LoadScene(1);
     }
 }
